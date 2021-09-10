@@ -20,38 +20,171 @@ body {
     height: 95vh;
     margin: auto;
 }
+.riga1_sx  {
+    width: 100%;
+    height: 7.2vh;
+    background-color: #EAEAEA;
+}
+/* common */
+.box_utente {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+.box_utente img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.nome {
+    font-size: 20px;
+}
+.box_icone {
+    position: absolute;
+    right: 10px;
+}
+.box_icone  i {
+    font-size: 30px;
+    color: #B1B1B1;
+    margin: 10px;
+}
+/* /common */
+/* sezione box sx  */
 .box_sx {
     width: 35%;
     height: 100%;
-    background-color: gray;
+    background-color: white;
+    border-right: 1px solid lightgray;
 }
-.box_dx {
-    width: 65%;
-    height: 100%;
+.riga1_sx {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 15px;
 }
-.top_sx, .top_dx, .scrivi {
-    width: 100%;
-    height: 7.5%;
-    background-color: #EAEAEA;
-}
+
+/* riga 2 notifiche */
 .notifiche {
+    display: flex;
+    padding: 20px;
     width: 100%;
     height: 8.6%;
     background-color: #8EDAFC;
 }
+.box_bell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #FAFAFA;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.box_bell i {
+    font-size: 25px;
+    color: #8EDAFC;
+}
+.box_link {
+    width: 100%;
+    height: 100%;
+
+}
+
+/* riga 3 cerca */
 .cerca {
     width: 100%;
     height: 5.8%;
-    background-color:#DCDBD2 ;
+    background-color:#FAFAFA ;
+    padding: 10px;
 }
-.utente {
+.box_cerca {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+.box_cerca i {
+    font-size: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #B1B1B1;
+}
+.box_cerca input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding-left: 10px;
+    font-size: 16px;
+}
+.box_contatti { 
     width: 100%;
     height: 8.6%;
+}
+.contatto {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
     background-color: white;
+    border-top: 1px solid #FAFAFA;
+}
+/* /sezione box sx  */
+
+/* sezione box dx  */
+.riga1_dx {
+    width: 100%;
+    height: 7.2vh;
+    background-color: #EAEAEA;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+.box_dx {
+    width: 65%;
+    height: 95vh;
+    background-color: lightgreen;
 }
 .messaggi {
     width: 100%;
-    height: 85%;
-    background-color: #D9D0CA;
+    height: 80.6vh;
+    background-image: url(../img/mine.jpg);
 }
+.scrivi{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 7.2vh;
+    background-color: #EAEAEA;
+    padding: 15px;
+}
+.box_scrivi {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.box_scrivi i {
+    font-size: 35px;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: gray;
+}
+.box_scrivi input {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+
+}
+/* /sezione box dx  */
+
+
+
 
