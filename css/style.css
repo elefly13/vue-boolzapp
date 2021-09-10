@@ -66,6 +66,7 @@ body {
 /* riga 2 notifiche */
 .notifiche {
     display: flex;
+    align-items: center;
     padding: 20px;
     width: 100%;
     height: 8.6%;
@@ -85,10 +86,8 @@ body {
     font-size: 25px;
     color: #8EDAFC;
 }
-.box_link {
-    width: 100%;
-    height: 100%;
-
+.box_link a{
+    color:gray;
 }
 
 /* riga 3 cerca */
@@ -118,6 +117,7 @@ body {
     padding-left: 10px;
     font-size: 16px;
 }
+/* righe sezione contatti  */
 .box_contatti { 
     width: 100%;
     height: 8.6%;
@@ -148,10 +148,32 @@ body {
     background-color: lightgreen;
 }
 .messaggi {
+    position: relative;
     width: 100%;
     height: 80.6vh;
     background-image: url(../img/mine.jpg);
 }
+.box_messaggio {
+    max-width: 80%;
+    min-width: 50%;
+    margin: 40px;
+    padding: 30px;
+}
+.messaggio_ricevuto {
+    float: left;
+    background-color: white;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+}
+.messaggio_inviato {
+    float: right;
+    background-color: rgb(171, 250, 185);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-left-radius: 25px;
+}
+
 .scrivi{
     display: flex;
     align-items: center;
