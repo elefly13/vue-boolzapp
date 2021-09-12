@@ -162,6 +162,8 @@ body {
 .messaggio_ricevuto {
     float: left;
     background-color: white;
+    border-top: 1px solid #B1B1B1;
+    border-left: 1px solid #B1B1B1;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     border-top-right-radius: 25px;
@@ -169,6 +171,8 @@ body {
 .messaggio_inviato {
     float: right;
     background-color: rgb(171, 250, 185);
+    border-top: 1px solid #B1B1B1;
+    border-right: 1px solid #B1B1B1;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     border-top-left-radius: 25px;

@@ -47,13 +47,13 @@
                 <!-- /sezione 3 cerca -->
                 <!-- sezione 4 contatti -->
                 <div class="box_contatti">
-                    <div class="contatto">
+                    <div class="contatto" v-for="(contact, index, avatar) in contacts">
                         <div class="box_utente">
                             <img src="img/avatar_1.jpg" alt="avatar">
                         </div>
-                        <div class="nome">Michele</div>
+                        <div class="nome">{{contact.name}}</div>
                     </div>
-                    <div class="contatto">
+                    <!-- <div class="contatto">
                         <div class="box_utente">
                             <img src="img/avatar_2.jpg" alt="avatar">
                         </div>
@@ -64,7 +64,7 @@
                             <img src="img/avatar_6.jpg" alt="avatar">
                         </div>
                         <div class="nome">Luisa</div>
-                    </div>
+                    </div> -->
                 </div>
                
             </section>
@@ -87,7 +87,6 @@
                 <div class="messaggi">
                     <div class="box_messaggio messaggio_ricevuto">Questo è un messaggio</div>
                     <div class="box_messaggio messaggio_inviato">Questa è la risposta</div>
-
                 </div>
                 <!-- /sezione di scambio messaggi -->
                 <div class="scrivi">
