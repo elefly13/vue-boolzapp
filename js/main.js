@@ -3,7 +3,9 @@ Vue.config.devtools = true;
 const app = new Vue(
     {
         el: "#root",
+        
         data: {
+            contattoCliccato: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -35,7 +37,7 @@ const app = new Vue(
                         date: '20/03/2020 16:30:00',
                         message: 'Ciao come stai?',
                         status: 'sent'
-                    },
+                        },
                         {
                             date: '20/03/2020 16:30:55',
                             message: 'Bene grazie! Stasera ci vediamo?',
@@ -56,7 +58,7 @@ const app = new Vue(
                         date: '28/03/2020 10:10:40',
                         message: 'La Marianna va in campagna',
                         status: 'received'
-                    },
+                        },
                         {
                             date: '28/03/2020 10:20:10',
                             message: 'Sicuro di non aver sbagliato chat?',
@@ -71,13 +73,13 @@ const app = new Vue(
                 },
                 {
                     name: 'Luisa',
-                    avatar: '_4',
+                    avatar: '_6',
                     visible: true,
                     messages: [{
                         date: '10/01/2020 15:30:55',
                         message: 'Lo sai che ha aperto una nuova pizzeria?',
                         status: 'sent'
-                    },
+                        },
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'Si, ma preferirei andare al cinema',
@@ -86,6 +88,18 @@ const app = new Vue(
                     ],
                 },
             ]
+        },
+        methods: {
+            selectContact() {
+                
+                if (this.contattoCliccato == (this.contacts.length)); 
+                
+            },
+           
+            indexContact(index) {
+                this.contattoCliccato = index;
+                // alert(index);
+            }
         }
     }
 )

@@ -47,36 +47,29 @@
                 <!-- /sezione 3 cerca -->
                 <!-- sezione 4 contatti -->
                 <div class="box_contatti">
-                    <div class="contatto" v-for="(contact) in contacts">
+                    <!-- <div class="contatto active" v-for="(contact) in contacts" @click="selectContact(index)" :class="(contact(index) == selectContact(index)) ? 'active' : null"> -->
+                    <div class="contatto" v-for="(contact,index) in contacts" @click="indexContact(index)" :class="(contattoCliccato == index) ? 'active' : null">
                         <div class="box_utente">
                             <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
                         </div>
                         <div class="nome">{{contact.name}}</div>
                     </div>
-                    <!-- <div class="contatto">
-                        <div class="box_utente">
-                            <img src="img/avatar_2.jpg" alt="avatar">
-                        </div>
-                        <div class="nome">Fabio</div>
-                    </div>
-                    <div class="contatto">
-                        <div class="box_utente">
-                            <img src="img/avatar_6.jpg" alt="avatar">
-                        </div>
-                        <div class="nome">Luisa</div>
-                    </div> -->
+                   
                 </div>
                
             </section>
             <section class="box_dx">
                 <div class="riga1_dx">
-                    <div class="box_utente">
-                        <img src="img/avatar_1.jpg" alt="avatar">
-                    </div>
-                    <div>
-                        <div class="nome">Michele</div>
-                        <div class="accesso">Ultimo accesso oggi alle</div>
-                    </div>
+                    
+                        <div class="box_utente">
+                            <img :src="'img/avatar' + contacts[contattoCliccato].avatar + '.jpg'" :alt="contacts[contattoCliccato].name">
+                        </div>
+                        <div>
+                            <div class="nome">{{contacts[contattoCliccato].name}}</div>
+                            <div class="accesso">Ultimo accesso oggi alle {{contacts[contattoCliccato].date}}</div>
+                        </div>
+                    
+                    
                     <div class="box_icone">
                         <i class="fas fa-search"></i> 
                         <i class="fas fa-paperclip"></i>
@@ -85,8 +78,10 @@
                 </div>
                 <!-- sezione di scambio messaggi -->
                 <div class="messaggi">
-                    <div v-for="(contacts, messages, message) in contacts" class="box_messaggio messaggio_ricevuto">{{contacts.messages.message}}</div>
-                    <div class="box_messaggio messaggio_inviato">Questa è la risposta</div>
+                    <div  v-for="message in contacts[contattoCliccato].messages" class="box_messaggio " :class="(message.status == 'sent') ? 'messaggio_ricevuto' : 'messaggio_inviato'">{{message.message}}
+                        <div class="time">{{message.date}} </div>
+                    </div>
+                    <!-- <div class="box_messaggio messaggio_inviato">Questa è la risposta</div> -->
                 </div>
                 <!-- /sezione di scambio messaggi -->
                 <div class="scrivi">
