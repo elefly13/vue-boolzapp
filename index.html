@@ -39,17 +39,17 @@
                 <!-- /sezione 2 notifiche  -->
                 <!-- sezione 3 cerca -->
                 <div class="cerca">
-                    <div class="box_cerca">
+                    <label class="box_cerca">
                         <i class="fas fa-search"></i> 
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
-                    </div>
+                    </label>
                 </div>
                 <!-- /sezione 3 cerca -->
                 <!-- sezione 4 contatti -->
                 <div class="box_contatti">
-                    <div class="contatto" v-for="(contact, index, avatar) in contacts">
+                    <div class="contatto" v-for="(contact) in contacts">
                         <div class="box_utente">
-                            <img src="img/avatar_1.jpg" alt="avatar">
+                            <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
                         </div>
                         <div class="nome">{{contact.name}}</div>
                     </div>
@@ -85,7 +85,7 @@
                 </div>
                 <!-- sezione di scambio messaggi -->
                 <div class="messaggi">
-                    <div class="box_messaggio messaggio_ricevuto">Questo è un messaggio</div>
+                    <div v-for="(contacts, messages, message) in contacts" class="box_messaggio messaggio_ricevuto">{{contacts.messages.message}}</div>
                     <div class="box_messaggio messaggio_inviato">Questa è la risposta</div>
                 </div>
                 <!-- /sezione di scambio messaggi -->
