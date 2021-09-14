@@ -170,7 +170,7 @@ body {
     padding-right: 30px;
     padding-bottom: 15px;
 }
-.messaggio_ricevuto {
+.messaggio_inviato{
     float: left;
     font-size: 18px;
     background-color: white;
@@ -180,7 +180,7 @@ body {
     border-bottom-right-radius: 25px;
     border-top-right-radius: 25px;
 }
-.messaggio_inviato {
+.messaggio_ricevuto {
     float: right;
     font-size: 18px;
     background-color: rgb(171, 250, 185);

@@ -6,6 +6,7 @@ const app = new Vue(
         
         data: {
             contattoCliccato: 0,
+            newMessage: "",
             contacts: [
                 {
                     name: 'Michele',
@@ -46,7 +47,7 @@ const app = new Vue(
                         {
                             date: '20/03/2020 16:35:00',
                             message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                            status: 'received'
+                            status: 'sent'
                         }
                     ],
                 },
@@ -90,16 +91,20 @@ const app = new Vue(
             ]
         },
         methods: {
-            selectContact() {
-                
-                if (this.contattoCliccato == (this.contacts.length)); 
-                
-            },
            
             indexContact(index) {
                 this.contattoCliccato = index;
                 // alert(index);
-            }
+            },
+
+            addMessage() {  
+                if(this.newMessage != "") {
+                    
+                    let time = dayjs().format('DD/MM/YYYY hh:mm:ss');
+                    this.contacts[this.contattoCliccato].messages.push({message: this.newMessage, status: 'sent', date: time}); 
+                    this.newMessage = "";
+                }
+            },
         }
     }
 )

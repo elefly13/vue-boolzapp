@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>BoolZapp</title>
@@ -47,7 +48,6 @@
                 <!-- /sezione 3 cerca -->
                 <!-- sezione 4 contatti -->
                 <div class="box_contatti">
-                    <!-- <div class="contatto active" v-for="(contact) in contacts" @click="selectContact(index)" :class="(contact(index) == selectContact(index)) ? 'active' : null"> -->
                     <div class="contatto" v-for="(contact,index) in contacts" @click="indexContact(index)" :class="(contattoCliccato == index) ? 'active' : null">
                         <div class="box_utente">
                             <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
@@ -66,7 +66,7 @@
                         </div>
                         <div>
                             <div class="nome">{{contacts[contattoCliccato].name}}</div>
-                            <div class="accesso">Ultimo accesso oggi alle {{contacts[contattoCliccato].date}}</div>
+                            <div class="accesso" >Ultimo accesso oggi alle </div>
                         </div>
                     
                     
@@ -87,7 +87,7 @@
                 <div class="scrivi">
                     <div class="box_scrivi">
                         <i class="far fa-smile"></i>
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input type="text"  v-model="newMessage" placeholder="Scrivi un messaggio" @keyUp.enter="addMessage">
                         <i class="fas fa-microphone"></i>
                     </div>
                 </div>
