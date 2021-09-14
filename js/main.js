@@ -7,6 +7,7 @@ const app = new Vue(
         data: {
             contattoCliccato: 0,
             newMessage: "",
+            replyMessage: "OK",
             contacts: [
                 {
                     name: 'Michele',
@@ -103,8 +104,16 @@ const app = new Vue(
                     let time = dayjs().format('DD/MM/YYYY hh:mm:ss');
                     this.contacts[this.contattoCliccato].messages.push({message: this.newMessage, status: 'sent', date: time}); 
                     this.newMessage = "";
-                }
-            },
+                    
+                    
+                    setTimeout(this.replyMessage * 3000)
+                    this.contacts[this.contattoCliccato].messages.push({message: this.replyMessage, status: 'received', date: time});
+                    this.replyMessage = "OK";
+                } 
+
+                
+            }
+            
         }
     }
 )
