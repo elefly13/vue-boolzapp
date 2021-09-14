@@ -97,23 +97,18 @@ const app = new Vue(
                 this.contattoCliccato = index;
                 // alert(index);
             },
+            reply() {
+                this.contacts[this.contattoCliccato].messages.push({message: this.replyMessage, status: 'received', date: dayjs().format('DD/MM/YYYY hh:mm:ss')});
+                this.replyMessage = "OK";
+            },
 
             addMessage() {  
                 if(this.newMessage != "") {
-                    
-                    let time = dayjs().format('DD/MM/YYYY hh:mm:ss');
-                    this.contacts[this.contattoCliccato].messages.push({message: this.newMessage, status: 'sent', date: time}); 
+                    this.contacts[this.contattoCliccato].messages.push({message: this.newMessage, status: 'sent', date: dayjs().format('DD/MM/YYYY hh:mm:ss')}); 
                     this.newMessage = "";
-                    
-                    
-                    setTimeout(this.replyMessage * 3000)
-                    this.contacts[this.contattoCliccato].messages.push({message: this.replyMessage, status: 'received', date: time});
-                    this.replyMessage = "OK";
+                    setTimeout(this.reply, 1000);
                 } 
-
-                
-            }
-            
+            } 
         }
     }
 )
