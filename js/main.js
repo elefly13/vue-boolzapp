@@ -8,6 +8,7 @@ const app = new Vue(
             contattoCliccato: 0,
             newMessage: "",
             replyMessage: "OK",
+            cerca: null,
             contacts: [
                 {
                     name: 'Michele',
@@ -91,6 +92,22 @@ const app = new Vue(
                 },
             ]
         },
+        computed: {
+            searchContact() {
+                // this.contacts.forEach(element => {
+                //     if (this.contacts.name.toLowerCase().split('') == this.cerca.toLowerCase().split('')){
+                //         return this.contacts
+                //     }
+                // });
+                if (this.cerca) {
+                    return this.contacts.filter((item) => {
+                        return this.cerca.toLowerCase().split(' ').every(e => item.name.toLowerCase().includes(e))
+                    })
+                } else {
+                    return this.contacts;
+                }
+            }
+        },
         methods: {
            
             indexContact(index) {
@@ -98,17 +115,21 @@ const app = new Vue(
                 // alert(index);
             },
             reply() {
-                this.contacts[this.contattoCliccato].messages.push({message: this.replyMessage, status: 'received', date: dayjs().format('DD/MM/YYYY hh:mm:ss')});
+                let thisContact = this.contacts[this.contattoCliccato];
+                thisContact.messages.push({message: this.replyMessage, status: 'received', date: dayjs().format('DD/MM/YYYY hh:mm:ss')});
                 this.replyMessage = "OK";
             },
 
             addMessage() {  
+                let thisContact = this.contacts[this.contattoCliccato];
                 if(this.newMessage != "") {
-                    this.contacts[this.contattoCliccato].messages.push({message: this.newMessage, status: 'sent', date: dayjs().format('DD/MM/YYYY hh:mm:ss')}); 
+                    thisContact.messages.push({message: this.newMessage, status: 'sent', date: dayjs().format('DD/MM/YYYY hh:mm:ss')}); 
                     this.newMessage = "";
                     setTimeout(this.reply, 1000);
                 } 
-            } 
+            }
+           
+   
         }
     }
 )

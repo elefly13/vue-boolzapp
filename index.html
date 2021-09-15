@@ -42,13 +42,13 @@
                 <div class="cerca">
                     <label class="box_cerca">
                         <i class="fas fa-search"></i> 
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" v-model="cerca"  placeholder="Cerca o inizia una nuova chat" @keyUp.enter="searchContact">
                     </label>
                 </div>
                 <!-- /sezione 3 cerca -->
                 <!-- sezione 4 contatti -->
                 <div class="box_contatti">
-                    <div class="contatto" v-for="(contact,index) in contacts" @click="indexContact(index)" :class="(contattoCliccato == index) ? 'active' : null">
+                    <div class="contatto" v-for="(contact,index) in searchContact" @click="indexContact(index)" :class="(contattoCliccato == index) ? 'active' : null">
                         <div class="box_utente">
                             <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
                         </div>
