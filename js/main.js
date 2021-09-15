@@ -92,23 +92,22 @@ const app = new Vue(
                 },
             ]
         },
-        computed: {
-            searchContact() {
-                // this.contacts.forEach(element => {
-                //     if (this.contacts.name.toLowerCase().split('') == this.cerca.toLowerCase().split('')){
-                //         return this.contacts
-                //     }
-                // });
-                if (this.cerca) {
-                    return this.contacts.filter((item) => {
-                        return this.cerca.toLowerCase().split(' ').every(e => item.name.toLowerCase().includes(e))
-                    })
-                } else {
-                    return this.contacts;
-                }
-            }
-        },
+     
         methods: {
+            searchContact() {
+                this.contacts.forEach((item) => {
+                    if (this.cerca) {
+                        if (item.name.toLowerCase().includes(this.cerca.toLowerCase())) {         
+                            item.visible = true;
+                        }else {
+                            item.visible = false;
+                        }
+                    }else {
+                            item.visible = true;
+                    }
+                })
+            
+            },
            
             indexContact(index) {
                 this.contattoCliccato = index;

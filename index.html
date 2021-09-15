@@ -48,9 +48,9 @@
                 <!-- /sezione 3 cerca -->
                 <!-- sezione 4 contatti -->
                 <div class="box_contatti">
-                    <div class="contatto" v-for="(contact,index) in searchContact" @click="indexContact(index)" :class="(contattoCliccato == index) ? 'active' : null">
+                    <div class="contatto" v-for="(contact,index) in contacts" v-show="(contact.visible)" @click="indexContact(index)" :class="(contattoCliccato == index) ? 'active' : null">
                         <div class="box_utente">
-                            <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+                            <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contacts.name">
                         </div>
                         <div class="nome">{{contact.name}}</div>
                     </div>
